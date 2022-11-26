@@ -12,12 +12,35 @@
   <link href="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.css" rel="stylesheet">
   <link href="assets/css/video.css" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    function createCard(videoUrl, thumbnailUrl, name, tags) {
+        return `<div class="item ${tags} col-sm-6 col-md-4 col-lg-4 mb-4">
+                  <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="${videoUrl}" data-target="#myModal">
+                    <div class="work-info">
+                      <!-- <img src="assets/img/play4.png"/> -->
+                      <span>${name}</span>
+                    </div>
+                    <img class="img-fluid" src="${thumbnailUrl}"/>
+                  </div>
+                </div>`;
+    }
+  </script>
 </head>
 
 <body>
@@ -27,17 +50,17 @@
     <div class="container py-md-5">
       <div class="row">
         <div class="col-sm-12 social text-md-center">
-          <a href="#"><span class="bi bi-twitter"></span></a>
-          <a href="#"><span class="bi bi-facebook"></span></a>
-          <a href="#"><span class="bi bi-instagram"></span></a>
-          <a href="#"><span class="bi bi-linkedin"></span></a>
+          <a href="https://www.twitter.com/BalaRawool"><span class="bi bi-twitter"></span></a>
+          <a href="https://github.com/balkrishnarawool"><span class="bi bi-github"></span></a>
+          <a href="https://stackoverflow.com/users/1241176/balkrishna-rawool"><span class="bi bi-stack-overflow"></span></a>
+          <a href="https://www.linkedin.com/in/balkrishnarawool/"><span class="bi bi-linkedin"></span></a>
         </div>
       </div>
     </div>
   </div>
   <nav class="navbar navbar-light custom-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Tech Talks</a>
+      <a class="navbar-brand" href="index.html">TechTalk Grid</a>
       <a href="#" class="burger" data-bs-toggle="collapse" data-bs-target="#main-navbar">
         <span></span>
       </a>
@@ -48,96 +71,241 @@
   <section class="section">
     <div class="container">
       <div class="row mb-1">
-        <div class="col-md-12 col-lg-6 text-start" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-12 col-lg-12 text-start" data-aos="fade-up" data-aos-delay="100">
           <div id="filters" class="filters">
+            <a href="#" data-filter="*" class="active">All</a>
             <a href="#" data-filter=".java">Java</a>
             <a href="#" data-filter=".kotlin">Kotlin</a>
-            <a href="#" data-filter=".design-patterns">Design Patterns</a>
-            <a href="#" data-filter=".loom">Loom</a>
             <a href="#" data-filter=".exception-handling">Exception Handling</a>
             <a href="#" data-filter=".spring">Spring</a>
             <a href="#" data-filter=".reactive">Reactive</a>
+
+            <a href="#" data-filter=".devops">DevOps</a>
+            <a href="#" data-filter=".kubernetes">Kubernetes</a>
+            <a href="#" data-filter=".cloud">Cloud</a>
+            <a href="#" data-filter=".security">Security</a>
+            <a href="#" data-filter=".performance">Performance</a>
             <a href="#" data-filter=".testing">Testing</a>
-            <a href="#" data-filter="*" class="active">All</a>
+            <a href="#" data-filter=".graalvm">GraalVM</a>
+            <a href="#" data-filter=".art">Art</a>
+            <a href="#" data-filter=".database">Database</a>
+            <a href="#" data-filter=".ai">AI</a>
+            <a href="#" data-filter=".devex">Developer Experience</a>
+            <a href="#" data-filter=".spring">Spring</a>
+            <a href="#" data-filter=".observability">Observability</a>
+            <a href="#" data-filter=".springboot">SpringBoot</a>
+            <a href="#" data-filter=".concurrency">Concurrency</a>
+            <a href="#" data-filter=".open-telemetry">Open Telemetry</a>
+            <a href="#" data-filter=".code">Code</a>
+            <a href="#" data-filter=".design">Design</a>
+            <a href="#" data-filter=".kotlin">Kotlin</a>
+            <a href="#" data-filter=".build">Build</a>
+            <a href="#" data-filter=".micronaut">Micronaut</a>
+            <a href="#" data-filter=".puzzlers">Puzzlers</a>
+            <a href="#" data-filter=".monitoring">Monitoring</a>
+            <a href="#" data-filter=".cloud-native">Cloud Native</a>
+            <a href="#" data-filter=".architecture">Architecture</a>
+            <a href="#" data-filter=".microservices">Microservices</a>
+            <a href="#" data-filter=".pattern-matching">Pattern Matching</a>
+            <a href="#" data-filter=".containers">Containers</a>
+            <a href="#" data-filter=".scala">Scala</a>
+            <a href="#" data-filter=".learning">Learning</a>
+            <a href="#" data-filter=".sql">SQL</a>
+            <a href="#" data-filter=".docker">Docker</a>
+            <a href="#" data-filter=".rust">Rust</a>
+            <a href="#" data-filter=".machine-learning">Machine Learning</a>
+            <a href="#" data-filter=".process">Process</a>
+            <a href="#" data-filter=".ddd">DDD</a>
+            <a href="#" data-filter=".project-loom">Project Loom</a>
+            <a href="#" data-filter=".container">Container</a>
+            <a href="#" data-filter=".aot">AOT</a>
+            <a href="#" data-filter=".quarkus">Quarkus</a>
+            <a href="#" data-filter=".bit">Bit</a>
+            <a href="#" data-filter=".tensor-flow">TensorFlow</a>
+            <a href="#" data-filter=".iot">IoT</a>
+            <a href="#" data-filter=".elastic-search">Elastic Search</a>
+            <a href="#" data-filter=".collections">Collections</a>
+            <a href="#" data-filter=".api">API</a>
+            <a href="#" data-filter=".raspberry-pi">Raspberry Pi</a>
+            <a href="#" data-filter=".models">Models</a>
+            <a href="#" data-filter=".images">Images</a>
+            <a href="#" data-filter=".streams">Streams</a>
+            <a href="#" data-filter=".game-development">Game Development</a>
+            <a href="#" data-filter=".distributed">Distributed</a>
+            <a href="#" data-filter=".decentralized">Decentralized</a>
+            <a href="#" data-filter=".akka">Akka</a>
+            <a href="#" data-filter=".grpc">gRPC</a>
+            <a href="#" data-filter=".javascript">JavaScript</a>
+            <a href="#" data-filter=".dependencies">Dependencies</a>
+            <a href="#" data-filter=".kafka">Kafka</a>
+            <a href="#" data-filter=".deserialization">Deserialization</a>
+            <a href="#" data-filter=".math">Math</a>
+            <a href="#" data-filter=".agile">Agile</a>
+            <a href="#" data-filter=".clean-code">Clean Code</a>
+            <a href="#" data-filter=".event-sourcing">Event Sourcing</a>
+            <a href="#" data-filter=".newsql">NewSQL</a>
+            <a href="#" data-filter=".native">Native</a>
+            <a href="#" data-filter=".pi4j">Pi4J</a>
+            <a href="#" data-filter=".serverless">Serverless</a>
+            <a href="#" data-filter=".performance">Performance</a>
+            <a href="#" data-filter=".gatling">Gatling</a>
+            <a href="#" data-filter=".gradle">Gradle</a>
+            <a href="#" data-filter=".fleet">Fleet</a>
+            <a href="#" data-filter=".data">Data</a>
+            <a href="#" data-filter=".cucumber">Cucumber</a>
+            <a href="#" data-filter=".oop">OOP</a>
+            <a href="#" data-filter=".protocol">Protocol</a>
+            <a href="#" data-filter=".cratedb">CrateDB</a>
+            <a href="#" data-filter=".strage-loops">Strage Loops</a>
+            <a href="#" data-filter=".jvm">JVM</a>
+            <a href="#" data-filter=".workflow">Workflow</a>
+            <a href="#" data-filter=".in-memory">In Memory</a>
+            <a href="#" data-filter=".airflow">AirFlow</a>
+            <a href="#" data-filter=".gpt">GPT</a>
+            <a href="#" data-filter=".ide">IDE</a>
+            <a href="#" data-filter=".functional-programming">Functional Programming</a>
+            <a href="#" data-filter=".blockchain">Blockchain</a>
+            <a href="#" data-filter=".http">HTTP</a>
+            <a href="#" data-filter=".nft">NFT</a>
+            <a href="#" data-filter=".b-tree">B-Tree</a>
+            <a href="#" data-filter=".legacy">Legacy</a>
+            <a href="#" data-filter=".android">Android</a>
+            <a href="#" data-filter=".diagrams">Diagrams</a>
+            <a href="#" data-filter=".istio">Istio</a>
+            <a href="#" data-filter=".problem-solving">Problem Solving</a>
+            <a href="#" data-filter=".platform">Platform</a>
+            <a href="#" data-filter=".scalability">Scalability</a>
+            <a href="#" data-filter=".network">Network</a>
+            <a href="#" data-filter=".metaverse">Metaverse</a>
+            <a href="#" data-filter=".git">Git</a>
+            <a href="#" data-filter=".8-bit">8-Bit</a>
+            <a href="#" data-filter=".jooq">jOOQ</a>
+            <a href="#" data-filter=".leadership">Leadership</a>
+            <a href="#" data-filter=".debugging">Debugging</a>
+            <a href="#" data-filter=".authentication">Authentication</a>
+            <a href="#" data-filter=".data-structure">Data Structure</a>
+            <a href="#" data-filter=".micro-stream">Micro Stream</a>
+            <a href="#" data-filter=".threads">Threads</a>
+            <a href="#" data-filter=".orm">ORM</a>
+            <a href="#" data-filter=".code-quality">Code Quality</a>
+            <a href="#" data-filter=".diagrammer">Diagrammer</a>
+            <a href="#" data-filter=".gitpod">Gitpod</a>
+            <a href="#" data-filter=".programming-languages">Programming Languages</a>
+            <a href="#" data-filter=".qwik">Qwik</a>
+            <a href="#" data-filter=".crac">CRaC</a>
+
           </div>
         </div>
       </div>
     <section class="section site-portfolio">
       <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-        <div class="item java design-patterns col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/yTuwi--LFsM" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>Design Patterns Revisited in Modern Java</span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/yTuwi--LFsM/maxresdefault.jpg"/>
-          </div>
-        </div>
-        <div class="item java loom col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/eU9mUmnhjb4" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>Loom in Blooming</span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/eU9mUmnhjb4/maxresdefault.jpg"/>
-          </div>
-        </div>
-        <div class="item java exception-handling col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/S5tLVsvbHBg" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>Exception Handling in Functional and Reactive Programming</span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/S5tLVsvbHBg/maxresdefault.jpg"/>
-          </div>
-        </div>
-        <div class="item spring kotlin reactive col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/2MYSLP2vgps" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>Spring + Kotlin = Modern + Reactive + Productive </span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/2MYSLP2vgps/maxresdefault.jpg"/>
-          </div>
-        </div>
-        <div class="item kotlin col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/k7iKd3RnuVA" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>What's new in Apollo Kotlin 3?</span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/k7iKd3RnuVA/maxresdefault.jpg"/>
-          </div>
-        </div>
-        <div class="item java testing col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/0kXEwo0XFaY" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>Mastering Testcontainers</span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/0kXEwo0XFaY/maxresdefault.jpg"/>
-          </div>
-        </div>
-        <div class="item java loom col-sm-6 col-md-4 col-lg-4 mb-4">
-          <div class="item-wrap fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/n8uGsc4y6W4" data-target="#myModal">
-            <div class="work-info">
-              <!-- <img src="assets/img/play4.png"/> -->
-              <span>Game of Loom: Implementation patterns and performance implications playing with virtual threads</span>
-            </div>
-            <img class="img-fluid" src="https://i.ytimg.com/vi/n8uGsc4y6W4/maxresdefault.jpg"/>
-          </div>
-        </div>
+
+        <script>
+        $(function(){
+          var grid = $('#portfolio-grid');
+
+          grid.append($(createCard("https://www.youtube.com/embed/yTuwi--LFsM","https://i.ytimg.com/vi/yTuwi--LFsM/maxresdefault.jpg","Design Patterns Revisited in Modern Java","java design oop functional-programming")));
+          grid.append($(createCard("https://www.youtube.com/embed/eU9mUmnhjb4","https://i.ytimg.com/vi/eU9mUmnhjb4/maxresdefault.jpg","Loom in Blooming","java project-loom concurrency threads")));
+          grid.append($(createCard("https://www.youtube.com/embed/S5tLVsvbHBg","https://i.ytimg.com/vi/S5tLVsvbHBg/maxresdefault.jpg","Exception Handling in Functional and Reactive Programming","java design exception-handling functional-programming")));
+          grid.append($(createCard("https://www.youtube.com/embed/2MYSLP2vgps","https://i.ytimg.com/vi/2MYSLP2vgps/maxresdefault.jpg","Spring + Kotlin = Modern + Reactive + Productive","kotlin spring reactive")));
+          grid.append($(createCard("https://www.youtube.com/embed/k7iKd3RnuVA","https://i.ytimg.com/vi/k7iKd3RnuVA/maxresdefault.jpg","What's new in Apollo Kotlin 3?","kotlin")));
+          grid.append($(createCard("https://www.youtube.com/embed/0kXEwo0XFaY","https://i.ytimg.com/vi/0kXEwo0XFaY/maxresdefault.jpg","Mastering Testcontainers","java integration testing testcontainers")));
+          grid.append($(createCard("https://www.youtube.com/embed/n8uGsc4y6W4","https://i.ytimg.com/vi/n8uGsc4y6W4/maxresdefault.jpg","Game of Loom: Implementation patterns and performance implications playing with virtual threads","java project-loom performance concurrency threads")));
+
+          grid.append($(createCard("https://www.youtube.com/embed/yTuwi--LFsM","https://i.ytimg.com/vi/o14wGByBRAQ/maxresdefault.jpg","Google's Journey from Java to Kotlin for Server Side Programming by James Ward , Brad Hawkes , John","kotlin")));
+          grid.append($(createCard("https://www.youtube.com/embed/It71SDDZeK0","https://i.ytimg.com/vi/It71SDDZeK0/maxresdefault.jpg","Cucumber tests: legends and reality by Michaël Strauss","java testing cucumber")));
+          grid.append($(createCard("https://www.youtube.com/embed/c3PoqdUjqLE","https://i.ytimg.com/vi/c3PoqdUjqLE/maxresdefault.jpg","Keep your dependencies in check by Marit van Dijk","java build dependencies")));
+          grid.append($(createCard("https://www.youtube.com/embed/cw--SX5Iq00","https://i.ytimg.com/vi/cw--SX5Iq00/maxresdefault.jpg","Confessions of a Rusty Java developer by Alex Snaps","java rust")));
+          grid.append($(createCard("https://www.youtube.com/embed/B-GaOGuXvwA","https://i.ytimg.com/vi/B-GaOGuXvwA/maxresdefault.jpg","Streamlining large scale Java development using Error Prone by Sander Mak","java code-quality")));
+          grid.append($(createCard("https://www.youtube.com/embed/tcciK7ECF8g","https://i.ytimg.com/vi/tcciK7ECF8g/maxresdefault.jpg","Math Behind Software by Bartłomiej Żyliński","math")));
+          grid.append($(createCard("https://www.youtube.com/embed/o2jmfttDJwg","https://i.ytimg.com/vi/o2jmfttDJwg/maxresdefault.jpg","What Leaders can learn from The Montessori Principles by Simone Casciaroli","process leadership")));
+          grid.append($(createCard("https://www.youtube.com/embed/NtrF_SiFQag","https://i.ytimg.com/vi/NtrF_SiFQag/maxresdefault.jpg","IoT in the Trenches, at Scale by James Gosling","java iot")));
+          grid.append($(createCard("https://www.youtube.com/embed/OlW724WaJJQ","https://i.ytimg.com/vi/OlW724WaJJQ/maxresdefault.jpg","The Art of Java Language Pattern Matching by Simon Ritter","java pattern-matching art")));
+          grid.append($(createCard("https://www.youtube.com/embed/DbEJzGjoe5s","https://i.ytimg.com/vi/DbEJzGjoe5s/maxresdefault.jpg","Bringing legacy codebases to Android by Michael Demey","java android legacy")));
+          grid.append($(createCard("https://www.youtube.com/embed/lnV0Hn2tias","https://i.ytimg.com/vi/lnV0Hn2tias/maxresdefault.jpg","Building Smart Devices using Java on the Raspberry Pi An intro to Pi4J by Frank Delporte","java raspberry-pi pi4j")));
+          grid.append($(createCard("https://www.youtube.com/embed/RiM1GsVSbzM","https://i.ytimg.com/vi/RiM1GsVSbzM/maxresdefault.jpg","Load Testing Crash Course with Gatling by Stéphane Landelle","java gatling testing performance")));
+          grid.append($(createCard("https://www.youtube.com/embed/4mhWOreUK3s","https://i.ytimg.com/vi/4mhWOreUK3s/maxresdefault.jpg","What's in my AI? A Comprehensive Analysis of Datasets Used to Train GPT 1, GPT 2, GPT 3, GPT NeoX 20","ai models machine-learning gpt data")));
+          grid.append($(createCard("https://www.youtube.com/embed/TS4DpYSmfXk","https://i.ytimg.com/vi/TS4DpYSmfXk/maxresdefault.jpg","Ahead Of Time and Native in Spring Boot 3.0 by Stéphane Nicoll & Brian Clozel","java spring aot springboot")));
+          grid.append($(createCard("https://www.youtube.com/embed/Jv1GAvKRhLM","https://i.ytimg.com/vi/Jv1GAvKRhLM/maxresdefault.jpg","Duke’s Star Trek with Java 18 Code Challenges by Rafael del Nero , Igor De Souza","java puzzlers")));
+          grid.append($(createCard("https://www.youtube.com/embed/U9y4QN1Yv_U","https://i.ytimg.com/vi/U9y4QN1Yv_U/maxresdefault.jpg","You shall not password by Mark Van Der Linden, Lucien Immink","security authentication")));
+          grid.append($(createCard("https://www.youtube.com/embed/DBw7INnlaYY","https://i.ytimg.com/vi/DBw7INnlaYY/maxresdefault.jpg","Ode to the mighty Bit by Roy van Rijn","java bit problem-solving art")));
+          grid.append($(createCard("https://www.youtube.com/embed/yQxvhbyeNt0","https://i.ytimg.com/vi/yQxvhbyeNt0/maxresdefault.jpg","Portable GraalVM Cloud Native applications with Micronaut® by Graeme Rocher","java graalvm cloud-native micronaut")));
+          grid.append($(createCard("https://www.youtube.com/embed/GiVP80dPhHU","https://i.ytimg.com/vi/GiVP80dPhHU/maxresdefault.jpg","How I built the world’s most efficient deepfake detector with $100 by Mathis Hammel","ai machine-learning tensor-flow elastic-search data")));
+          grid.append($(createCard("https://www.youtube.com/embed/8Eec_Gk_Wqc","https://i.ytimg.com/vi/8Eec_Gk_Wqc/maxresdefault.jpg","Why you should be using OpenTelemetry! by Robert Castley","devops observability open-telemetry")));
+          grid.append($(createCard("https://www.youtube.com/embed/GjN0-vCzAzI","https://i.ytimg.com/vi/GjN0-vCzAzI/maxresdefault.jpg","What the heck is Project Loom and what can a normal Java developer expect from it? by Deepu K Sasidh","java project-loom virtual-threads concurrency threads")));
+          grid.append($(createCard("https://www.youtube.com/embed/5Td7vAS9qJI","https://i.ytimg.com/vi/5Td7vAS9qJI/maxresdefault.jpg","Things I Wish I Knew When I Started Testing Spring Boot Applications by Philip Riecks","java springboot testing")));
+          grid.append($(createCard("https://www.youtube.com/embed/0-v1OfZOeFY","https://i.ytimg.com/vi/0-v1OfZOeFY/maxresdefault.jpg","Let's make a contract: the art of designing a Java API by Mario Fusco","java api design art oop")));
+          grid.append($(createCard("https://www.youtube.com/embed/FBWgbhp8FG8","https://i.ytimg.com/vi/FBWgbhp8FG8/maxresdefault.jpg","Serverless Integration with Camel Quarkus by Kevin Dubois","java serverless cloud quarkus")));
+          grid.append($(createCard("https://www.youtube.com/embed/TqJz1NUR8zY","https://i.ytimg.com/vi/TqJz1NUR8zY/maxresdefault.jpg","Don't hack the platform ☠️💣💥 by Jan Ouwens","devops platform security")));
+          grid.append($(createCard("https://www.youtube.com/embed/Fh046P-T8F4","https://i.ytimg.com/vi/Fh046P-T8F4/maxresdefault.jpg","Akka Streams for the Brave by Daniel Ciocirlan","scala akka streams")));
+          grid.append($(createCard("https://www.youtube.com/embed/fW80PwtNJAM","https://i.ytimg.com/vi/fW80PwtNJAM/maxresdefault.jpg","JOOQ, Joy of SQL by Kevin Davin","database sql jooq")));
+          grid.append($(createCard("https://www.youtube.com/embed/mhmqomex1zk","https://i.ytimg.com/vi/mhmqomex1zk/maxresdefault.jpg","Revolutionizing Java-Based Applications with GraalVM by Alina Yurenko and Thomas Wuerthinger","java graalvm cloud-native performance")));
+          grid.append($(createCard("https://www.youtube.com/embed/YQ6EpIk7KgY","https://i.ytimg.com/vi/YQ6EpIk7KgY/maxresdefault.jpg","The Age of Virtual Threads by Ron Pressler And Alan Bateman","java project-loom threads virtual-threads concurrency")));
+          grid.append($(createCard("https://www.youtube.com/embed/MYD4rrIqDhA","https://i.ytimg.com/vi/MYD4rrIqDhA/maxresdefault.jpg","Event Sourcing : what could possibly go wrong? by Andrzej Ludwikowski","ddd design event-sourcing scala")));
+          grid.append($(createCard("https://www.youtube.com/embed/w91JHUyRGRc","https://i.ytimg.com/vi/w91JHUyRGRc/maxresdefault.jpg","Getting started with Domain Driven Design without fighting the wrong battles by Josian Chevalier","design ddd")));
+          grid.append($(createCard("https://www.youtube.com/embed/AEJ4l5uBBhA","https://i.ytimg.com/vi/AEJ4l5uBBhA/maxresdefault.jpg","Docker Compose: From Localhost to Cloud by Guillaume Lours and Antonio Goncalves","devops docker containers cloud")));
+          grid.append($(createCard("https://www.youtube.com/embed/_ZjuZ15LiYY","https://i.ytimg.com/vi/_ZjuZ15LiYY/maxresdefault.jpg","Fleet is on its way by Vitaly Bragilevsky","java ide fleet devex")));
+          grid.append($(createCard("https://www.youtube.com/embed/HaKvT18xXNM","https://i.ytimg.com/vi/HaKvT18xXNM/maxresdefault.jpg","Java *is* agile by Venkat Subramaniam","java agile")));
+          grid.append($(createCard("https://www.youtube.com/embed/czbExIRmyKo","https://i.ytimg.com/vi/czbExIRmyKo/maxresdefault.jpg","NewSQL, the holy grail of databases? by Alexandru Madalin Ghenea And Marc Cortada Bertomeu","database sql newsql")));
+          grid.append($(createCard("https://www.youtube.com/embed/SLklP4vQMas","https://i.ytimg.com/vi/SLklP4vQMas/maxresdefault.jpg","Monitoring Latencies: How fast is your REST service? by Fabian Stäber","devops monitoring microservices")));
+          grid.append($(createCard("https://www.youtube.com/embed/5FWNpaiqYhw","https://i.ytimg.com/vi/5FWNpaiqYhw/maxresdefault.jpg","Introducing Spring Framework 6.0 by Brian Clozel and Stephane Nicoll","java spring")));
+          grid.append($(createCard("https://www.youtube.com/embed/xjYy91BxdPo","https://i.ytimg.com/vi/xjYy91BxdPo/maxresdefault.jpg","Artificial Intelligence: You Are Here by Alan D Thompson","ai data")));
+          grid.append($(createCard("https://www.youtube.com/embed/pGHN8a3VAeU","https://i.ytimg.com/vi/pGHN8a3VAeU/maxresdefault.jpg","The fast startup landscape is expanding! by Dan Heidinga","java cloud performance")));
+          grid.append($(createCard("https://www.youtube.com/embed/4qxfVuK50Jk","https://i.ytimg.com/vi/4qxfVuK50Jk/maxresdefault.jpg","Performance Testing Java Applications by Pratik Patel","java testing performance")));
+          grid.append($(createCard("https://www.youtube.com/embed/V_mzFdFTk6I","https://i.ytimg.com/vi/V_mzFdFTk6I/maxresdefault.jpg","Clean Code with Records, Sealed Classes and Pattern Matching by José Paumard","java pattern-matching code-quality oop functional-programming")));
+          grid.append($(createCard("https://www.youtube.com/embed/oBaaofLJ6_8","https://i.ytimg.com/vi/oBaaofLJ6_8/maxresdefault.jpg","Build Better, Deploy Faster: Spring Boot + Spring Cloud in the Cloud for frictionless Kubernetes bas","java cloud springboot kubernetes")));
+          grid.append($(createCard("https://www.youtube.com/embed/OJfn0vbZmGs","https://i.ytimg.com/vi/OJfn0vbZmGs/maxresdefault.jpg","Ephemeral Developer Environments for a better Developer Experience by André Duarte","devex gitpod")));
+          grid.append($(createCard("https://www.youtube.com/embed/M4KktA_jbOE","https://i.ytimg.com/vi/M4KktA_jbOE/maxresdefault.jpg","Will Git Be Around Forever? A List of Possible Successors by Hanno Embregts","git")));
+          grid.append($(createCard("https://www.youtube.com/embed/O4MudYN2axA","https://i.ytimg.com/vi/O4MudYN2axA/maxresdefault.jpg","Java™ 18 & 19 What's new and noteworthy? by Piotr Przybyl","java")));
+          grid.append($(createCard("https://www.youtube.com/embed/iJ2muJniikY","https://i.ytimg.com/vi/iJ2muJniikY/maxresdefault.jpg","Spring Security, demystified by Daniel Garnier Moiroux","java spring security")));
+          grid.append($(createCard("https://www.youtube.com/embed/4ZxEPfbnias","https://i.ytimg.com/vi/4ZxEPfbnias/maxresdefault.jpg","Dynamic workflow orchestration with Apache Airflow and CrateDB by Marija Selakovic","java workflow airflow cratedb")));
+          grid.append($(createCard("https://www.youtube.com/embed/U0lGmE8DW9U","https://i.ytimg.com/vi/U0lGmE8DW9U/maxresdefault.jpg","Improving your skills with the debugger by Bouke Nijhuis","java devex debugging")));
+          grid.append($(createCard("https://www.youtube.com/embed/FtmCwLAJUIs","https://i.ytimg.com/vi/FtmCwLAJUIs/maxresdefault.jpg","How to secure a Kubernetes cluster from scratch? by Vincent Bodiou, Ludovic Toison, Marion Nicolé","devops kubernetes security")));
+          grid.append($(createCard("https://www.youtube.com/embed/P4XNz6XI8ZU","https://i.ytimg.com/vi/P4XNz6XI8ZU/maxresdefault.jpg","Plugin and Play with Kotlin by Simone de Gijt","kotlin devex code-quality build")));
+          grid.append($(createCard("https://www.youtube.com/embed/KOAR1FRNRaM","https://i.ytimg.com/vi/KOAR1FRNRaM/maxresdefault.jpg","The Practice of Securing Kubernetes by Ben Hirschberg","devops kubernetes security")));
+          grid.append($(createCard("https://www.youtube.com/embed/w6hhjg_gt_M","https://i.ytimg.com/vi/w6hhjg_gt_M/maxresdefault.jpg","Java Collections Puzzlers by Maurice Naftalin And José Paumard","java collections puzzlers")));
+          grid.append($(createCard("https://www.youtube.com/embed/paVdXL5vDzg","https://i.ytimg.com/vi/paVdXL5vDzg/maxresdefault.jpg","Kafka: a map of traps for the enlightened dev and op by Emmanuel Bernard And Clement Escoffier","devops kafka")));
+          grid.append($(createCard("https://www.youtube.com/embed/UdCxii0xihw","https://i.ytimg.com/vi/UdCxii0xihw/maxresdefault.jpg","Threading lightly with Kotlin by Vasco Veloso","kotlin concurrency threads")));
+          grid.append($(createCard("https://www.youtube.com/embed/NucXvPL1z5o","https://i.ytimg.com/vi/NucXvPL1z5o/maxresdefault.jpg","Build and deploy cloud native Java microservices on Kubernetes with Istio service mesh K sasidharan","java microservices cloud kubernetes devops istio")));
+          grid.append($(createCard("https://www.youtube.com/embed/djDX3jYzLvk","https://i.ytimg.com/vi/djDX3jYzLvk/maxresdefault.jpg","Blockchain, NFT and smart contracts for my Java application by Hendrik Ebbers & Michael Heinrichs","java blockchain nft")));
+          grid.append($(createCard("https://www.youtube.com/embed/gPA-yE6q_PQ","https://i.ytimg.com/vi/gPA-yE6q_PQ/maxresdefault.jpg","Supercharge your Native Image applications in 5 steps! by Alina Yurenko","java native images graalvm")));
+          grid.append($(createCard("https://www.youtube.com/embed/kxN53yKUo4A","https://i.ytimg.com/vi/kxN53yKUo4A/maxresdefault.jpg","OpenTelemetry – An Observability Framework for Cloud Native Software by Dennis Kieselhorst","observability cloud open-telemetry")));
+          grid.append($(createCard("https://www.youtube.com/embed/_L0piM92np4","https://i.ytimg.com/vi/_L0piM92np4/maxresdefault.jpg","Gradle: Give your build some love, it will be returned! by Louis Jacomet & Kyle Moore","java build gradle")));
+          grid.append($(createCard("https://www.youtube.com/embed/5Z5sa9HpQrE","https://i.ytimg.com/vi/5Z5sa9HpQrE/maxresdefault.jpg","Testing an onion architecture, done right by Michel Schudel","java architecture testing")));
+          grid.append($(createCard("https://www.youtube.com/embed/wApqCjHWF8Q","https://i.ytimg.com/vi/wApqCjHWF8Q/maxresdefault.jpg","Secrets of Performance Tuning Java on Kubernetes by Bruno Borges","java kubernetes performance")));
+          grid.append($(createCard("https://www.youtube.com/embed/3t-gwFuOtnM","https://i.ytimg.com/vi/3t-gwFuOtnM/maxresdefault.jpg","GraalVM Cloud Native & Micronaut Deep Dive by Graeme Rocher","java graalvm cloud micronaut")));
+          grid.append($(createCard("https://www.youtube.com/embed/zoqBJhlsCdY","https://i.ytimg.com/vi/zoqBJhlsCdY/maxresdefault.jpg","Docker Who: Small Containers Through Time and Space by Dmitry Chuyko","docker containers devops")));
+          grid.append($(createCard("https://www.youtube.com/embed/netXNrIjS7w","https://i.ytimg.com/vi/netXNrIjS7w/maxresdefault.jpg","Why don't you create your next application without a database? by Rudy De Busscher","database in-memory micro-stream")));
+          grid.append($(createCard("https://www.youtube.com/embed/YBRtHB67Nrc","https://i.ytimg.com/vi/YBRtHB67Nrc/maxresdefault.jpg","Learning Through Tinkering by Tom Cools","process learning")));
+          grid.append($(createCard("https://www.youtube.com/embed/pc6QIwx0EL0","https://i.ytimg.com/vi/pc6QIwx0EL0/maxresdefault.jpg","ORM, 20 years later by Gavin King","database orm")));
+          grid.append($(createCard("https://www.youtube.com/embed/yZyQSr4V7_Y","https://i.ytimg.com/vi/yZyQSr4V7_Y/maxresdefault.jpg","Debugging distributed systems by Bert Jan Schrijver","devops debugging network")));
+          grid.append($(createCard("https://www.youtube.com/embed/G7F-UxKhxY4","https://i.ytimg.com/vi/G7F-UxKhxY4/maxresdefault.jpg","Repeatable scalable path to production for Java Spring apps on Kubernetes by Dieter Hubau","java spring kubernetes scalability")));
+          grid.append($(createCard("https://www.youtube.com/embed/rBQNGxUGhR0","https://i.ytimg.com/vi/rBQNGxUGhR0/maxresdefault.jpg","gRPC Cornerstone: HTTP2… or HTTP3? by Mykyta Protsenko & Alex Borysov","protocol grpc http")));
+          grid.append($(createCard("https://www.youtube.com/embed/xb6qzwfrP8U","https://i.ytimg.com/vi/xb6qzwfrP8U/maxresdefault.jpg","The Hacker’s Guide to Kubernetes Security by Patrycja Wegrzynowicz","kubernetes security devops")));
+          grid.append($(createCard("https://www.youtube.com/embed/bWmuqh6wHgE","https://i.ytimg.com/vi/bWmuqh6wHgE/maxresdefault.jpg","Java on CRaC: Superfast JVM Application Startup by Simon Ritter","java performance jvm crac")));
+          grid.append($(createCard("https://www.youtube.com/embed/u9OAIwCXmdw","https://i.ytimg.com/vi/u9OAIwCXmdw/maxresdefault.jpg","From Objects to Functions by Uberto Barbini","java design functional-programming oop")));
+          grid.append($(createCard("https://www.youtube.com/embed/_T8ta3BBhc4","https://i.ytimg.com/vi/_T8ta3BBhc4/maxresdefault.jpg","The Art of Code by Dylan Beattie","code art programming-languages")));
+          grid.append($(createCard("https://www.youtube.com/embed/Zddw6qy5pf0","https://i.ytimg.com/vi/Zddw6qy5pf0/maxresdefault.jpg","Qwik: A no hydration instant on personalized web applications by Misko Hevery","javascript framework performance qwik")));
+          grid.append($(createCard("https://www.youtube.com/embed/lcP05GcJfoQ","https://i.ytimg.com/vi/lcP05GcJfoQ/maxresdefault.jpg","Reality as code : How close are we at generating humans and it's environment by Patrick Debois","code art ai data")));
+          grid.append($(createCard("https://www.youtube.com/embed/WWsN9Y5OtZQ","https://i.ytimg.com/vi/WWsN9Y5OtZQ/maxresdefault.jpg","Deserialization exploits in Java: why should I care? by Brian Vermeer","java security deserialization")));
+          grid.append($(createCard("https://www.youtube.com/embed/hLRFSsjt1a0","https://i.ytimg.com/vi/hLRFSsjt1a0/maxresdefault.jpg","The State of OpenTelemetry for Java Developers by Philipp Krenn","java observability open-telemetry")));
+          grid.append($(createCard("https://www.youtube.com/embed/hBxEB4yCkHA","https://i.ytimg.com/vi/hBxEB4yCkHA/maxresdefault.jpg","How to handle 100,000,000 logins without service interruption ? Betclic will relate his football Eur","devops performance monitoring observability")));
+          grid.append($(createCard("https://www.youtube.com/embed/9jAf8u-be1g","https://i.ytimg.com/vi/9jAf8u-be1g/maxresdefault.jpg","Java and Rust by Yishai Galatzer","java rust")));
+          grid.append($(createCard("https://www.youtube.com/embed/TYEi5ncG48k","https://i.ytimg.com/vi/TYEi5ncG48k/maxresdefault.jpg","Get old, go slow, write code! by Tobias Modig","code learning")));
+          grid.append($(createCard("https://www.youtube.com/embed/5tkVW-BNLwA","https://i.ytimg.com/vi/5tkVW-BNLwA/maxresdefault.jpg","If only I owned my data: Architecting decentralized data by Katharine Jarmul, Nimisha Asthagiri","data architecture decentralized")));
+          grid.append($(createCard("https://www.youtube.com/embed/gT9Xu-ctNqI","https://i.ytimg.com/vi/gT9Xu-ctNqI/maxresdefault.jpg","Diagrammar: Simply Make Interactive Diagrams by Pontus Granström (Strange Loop 2022)","diagrams interactive diagrammer")));
+          grid.append($(createCard("https://www.youtube.com/embed/4ELJDEjDpqk","https://i.ytimg.com/vi/4ELJDEjDpqk/maxresdefault.jpg","Modern B-Tree techniques by Dmitrii Dolgov (Strange Loop 2022)","b-tree data-structure")));
+          grid.append($(createCard("https://www.youtube.com/embed/dmCr5Al_ptM","https://i.ytimg.com/vi/dmCr5Al_ptM/maxresdefault.jpg","The Evolution of a Planetary-scale Distributed Database by Kevin Scaldeferri (Strange Loop 2022)","distributed database")));
+          grid.append($(createCard("https://www.youtube.com/embed/WP_4IUCqFcc","https://i.ytimg.com/vi/WP_4IUCqFcc/maxresdefault.jpg","Sniffing the Metaverse by Benjamin Cabé (Strange Loop 2022)","metaverse")));
+          grid.append($(createCard("https://www.youtube.com/embed/AffW-7ika0E","https://i.ytimg.com/vi/AffW-7ika0E/maxresdefault.jpg","Strange Dreams of Stranger Loops by Will Byrd","strage-loops")));
+          grid.append($(createCard("https://www.youtube.com/embed/TPbroUDHG0s","https://i.ytimg.com/vi/TPbroUDHG0s/maxresdefault.jpg","Game Development in Eight Bits by Kevin Zurawel","game-development 8-bit")));
+          grid.append($(createCard("https://www.youtube.com/embed/6wYrAtngIVo","https://i.ytimg.com/vi/6wYrAtngIVo/maxresdefault.jpg","A 1.5MB Java Container App? Yes you can! by Shaun Smith","java container graalvm")));
+
+        });
+        </script>
       </div>
   </section><!-- End  Works Section -->
 </section>
-
-<!-- <button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/NFWSFbqL0A0" data-target="#myModal">
-  Play Video 1 - autoplay
-</button>
-
-<div class="fancybox video-btn" data-toggle="modal" data-src="https://www.youtube.com/embed/NFWSFbqL0A0" data-target="#myModal">
-  Play Video 1 - autoplay
-</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,8 +324,6 @@
   </div>
 </div>
 
-
-
 <!-- ======= Footer ======= -->
 <footer class="footer" role="contentinfo">
   <div class="container">
@@ -175,29 +341,19 @@
         </div>
       </div>
       <div class="col-sm-6 social text-md-end">
-        <a href="#"><span class="bi bi-twitter"></span></a>
-        <a href="#"><span class="bi bi-facebook"></span></a>
-        <a href="#"><span class="bi bi-instagram"></span></a>
-        <a href="#"><span class="bi bi-linkedin"></span></a>
+        <a href="https://www.twitter.com/BalaRawool"><span class="bi bi-twitter"></span></a>
+        <a href="https://github.com/balkrishnarawool"><span class="bi bi-github"></span></a>
+        <a href="https://stackoverflow.com/users/1241176/balkrishna-rawool"><span class="bi bi-stack-overflow"></span></a>
+        <a href="https://www.linkedin.com/in/balkrishnarawool/"><span class="bi bi-linkedin"></span></a>
       </div>
     </div>
   </div>
 </footer>
 
-
-
+<script src="assets/js/video.js"></script>
+<script src="assets/js/main.js"></script>
 
 </div>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-  <script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script>
-  <script src="assets/js/video.js"></script>
-
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <script src="assets/js/main.js"></script>
 
 </body>
 

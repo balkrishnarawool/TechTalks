@@ -9,7 +9,9 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Inconsolata", monospace;
+  /* font-family: "Inconsolata", monospace; */
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
   color: #0d1e2d;
 }
 
@@ -33,7 +35,7 @@ h6,
 }
 
 .section {
-  padding: 7rem 0;
+  padding: 1rem 0;
 }
 
 .filters a {
@@ -393,8 +395,13 @@ h6,
 
 /* Custom Navbar */
 .custom-navbar {
-  padding-top: 50px;
+  /*padding-top: 50px; */
   width: 100%;
+}
+
+.container {
+  padding-top: 2rem!important;
+  padding-bottom: 1rem!important;
 }
 
 @media (max-width: 780px) {
@@ -405,7 +412,7 @@ h6,
 }
 
 .custom-navbar .navbar-brand {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
 }
 
 /* Burger */
